@@ -25,19 +25,21 @@ parking_space = st.number_input("Parking Space", 0, 5, 1)
 
 if st.button("Predict"):
     input_data = pd.DataFrame([{
-        "State": state,
-        "City": city,
-        "Locality": locality,
-        "Property_Type": property_type,
-        "BHK": bhk,
-        "Size_in_SqFt": size_sqft,
-        "Price_per_SqFt": price_per_sqft,
-        "Year_Built": year_built,
-        "Furnished_Status": furnished_status,
-        "Nearby_Schools": nearby_schools,
-        "Nearby_Hospitals": nearby_hospitals,
-        "Parking_Space": parking_space
-    }])
+    "Price_per_SqFt": price_per_sqft,
+    "Infra_Score": infra_score,
+    "Amenities_Count": amenities_count,
+    "Size_in_SqFt": size_sqft,
+    "Nearby_Schools": nearby_schools,
+    "Nearby_Hospitals": nearby_hospitals,
+    "Parking_Space": parking_space,
+    "Property_Type": property_type,
+    "Furnished_Status": furnished_status,
+    "Owner_Type": owner_type,
+    "Availability_Status": availability_status,
+    "State": state,
+    "City": city
+}])
+
 
     prediction = model.predict(input_data)[0]
 
