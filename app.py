@@ -31,26 +31,41 @@ availability_status = st.selectbox("Availability Status", ["Ready to Move", "Und
 
 
 if st.button("Predict"):
-    input_data = pd.DataFrame([{
-    "Price_per_SqFt": price_per_sqft,
-    "Infra_Score": infra_score,
-    "Amenities_Count": amenities_count,
-    "Size_in_SqFt": size_sqft,
-    "Nearby_Schools": nearby_schools,
-    "Nearby_Hospitals": nearby_hospitals,
-    "Parking_Space": parking_space,
-    "Property_Type": property_type,
-    "Furnished_Status": furnished_status,
-    "Owner_Type": owner_type,
-    "Availability_Status": availability_status,
-    "State": state,
-    "City": city
-}])
 
+    input_data = pd.DataFrame([{
+        "Price_per_SqFt": price_per_sqft,
+        "Infra_Score": infra_score,
+        "Amenities_Count": amenities_count,
+        "Size_in_SqFt": size_sqft,
+        "Nearby_Schools": nearby_schools,
+        "Nearby_Hospitals": nearby_hospitals,
+        "Parking_Space": parking_space,
+        "Property_Type": property_type,
+        "Furnished_Status": furnished_status,
+        "Owner_Type": owner_type,
+        "Availability_Status": availability_status,
+        "State": state,
+        "City": city
+    }],
+    columns=[
+        "Price_per_SqFt",
+        "Infra_Score",
+        "Amenities_Count",
+        "Size_in_SqFt",
+        "Nearby_Schools",
+        "Nearby_Hospitals",
+        "Parking_Space",
+        "Property_Type",
+        "Furnished_Status",
+        "Owner_Type",
+        "Availability_Status",
+        "State",
+        "City"
+    ])
 
     prediction = model.predict(input_data)[0]
 
     if prediction == 1:
-        st.success("🏆 This is a GOOD INVESTMENT 🚀")
+        st.success("🎉 This is a GOOD INVESTMENT 💹")
     else:
         st.error("⚠️ This property is NOT a good investment.")
