@@ -5,7 +5,7 @@ import joblib
 st.set_page_config(page_title="Real Estate Investment Advisor", page_icon="🏡")
 
 # Load model
-model = joblib.load("investment_classifier_model.pkl")
+model = joblib.load("investment_classifier_model_compressed.pkl")
 
 st.title("🏡 Real Estate Investment Advisor")
 st.write("Fill the details below to check if the property is a Good Investment.")
