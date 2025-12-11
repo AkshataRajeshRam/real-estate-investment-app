@@ -46,7 +46,7 @@ if st.button("Predict"):
         "Availability_Status": availability_status,
         "State": state,
         "City": city
-    }]
+    }])
 
     prediction = model.predict(input_data)[0]
 
