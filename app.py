@@ -46,22 +46,7 @@ if st.button("Predict"):
         "Availability_Status": availability_status,
         "State": state,
         "City": city
-    }],
-    columns=[
-        "Price_per_SqFt",
-        "Infra_Score",
-        "Amenities_Count",
-        "Size_in_SqFt",
-        "Nearby_Schools",
-        "Nearby_Hospitals",
-        "Parking_Space",
-        "Property_Type",
-        "Furnished_Status",
-        "Owner_Type",
-        "Availability_Status",
-        "State",
-        "City"
-    ])
+    }]
 
     prediction = model.predict(input_data)[0]
 
